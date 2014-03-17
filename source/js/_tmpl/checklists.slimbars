@@ -1,0 +1,5 @@
+ul
+  | {{#checklists}}
+  li
+    == link_to '{{name}}', '/#{{category_id}}/{{id}}'
+  | {{/checklists}}

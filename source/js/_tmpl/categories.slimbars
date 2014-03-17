@@ -1,0 +1,5 @@
+ul
+  | {{#categories}}
+  li
+    == link_to '{{name}}', '/#{{id}}'
+  | {{/categories}}
