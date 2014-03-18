@@ -1,10 +1,11 @@
 #= require '../_tmpl/checklists'
 
 class ChecklistsPage extends Backbone.View
-  el: 'body'
+  el: '#page'
 
   compose: ->
-    checklists: @collection.where({category_id: @category_id}).map (checklist) -> checklist.toJSON()
+    category: data.categories.get(@categoryId).toJSON()
+    checklists: @collection.where({category_id: @categoryId}).map (checklist) -> checklist.toJSON()
 
   remove: ->
     @$el.empty()
@@ -14,7 +15,8 @@ class ChecklistsPage extends Backbone.View
     @$el[0].innerHTML = HandlebarsTemplates.checklists(@compose())
 
   initialize: (options) ->
-    @category_id = options.category_id
+    @collection = data.checklists
+    @categoryId = options.categoryId
     @collection.fetch().done @render.bind(@)
 
 window.ChecklistsPage = ChecklistsPage

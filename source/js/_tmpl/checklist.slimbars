@@ -1,0 +1,9 @@
+h1
+  | {{name}}
+ul
+  | {{#items}}
+  li
+    label
+      input type='checkbox'
+      | {{.}}
+  | {{/items}}

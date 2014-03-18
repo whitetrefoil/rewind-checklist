@@ -1,25 +1,22 @@
 class MainRouter extends Backbone.Router
   routes:
     '': 'categories'
-    ':category_id': 'checklists'
+    ':categoryId': 'checklists'
+    ':categoryId/:checklistId': 'checklist'
 
   categories: ->
     @pageView?.remove()
-    @pageView = new CategoriesPage
-      collection: @data.categories
+    @pageView = new CategoriesPage()
 
-  checklists: (category_id) ->
+  checklists: (categoryId) ->
     @pageView?.remove()
     @pageView = new ChecklistsPage
-      collection: @data.checklists
-      category_id: category_id
+      categoryId: categoryId
 
-  prepareData: ->
-    @data =
-      categories: new Categories()
-      checklists: new Checklists()
-
-  initialize: ->
-    @prepareData()
+  checklist: (categoryId, checklistId) ->
+    @pageView?.remove()
+    @pageView = new ChecklistPage
+      checklistId: checklistId
+      categoryId: categoryId
 
 window.MainRouter = MainRouter

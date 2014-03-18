@@ -1,7 +1,7 @@
 #= require '../_tmpl/categories'
 
 class CategoriesPage extends Backbone.View
-  el: 'body'
+  el: '#page'
 
   compose: ->
     categories: @collection.toJSON()
@@ -11,10 +11,10 @@ class CategoriesPage extends Backbone.View
     @stopListening()
 
   render: ->
-    console.log 'c'
     @$el[0].innerHTML = HandlebarsTemplates.categories(@compose())
 
   initialize: ->
+    @collection = data.categories
     @collection.fetch().done @render.bind(@)
 
 window.CategoriesPage = CategoriesPage

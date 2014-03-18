@@ -1,3 +1,10 @@
+window.data =
+  categories: new Categories()
+  checklists: new Checklists()
+
+window.router = new MainRouter()
+
 $ ->
-  router = new MainRouter()
-  Backbone.history.start()
+  promises = _(data).map (collection) -> collection.fetch()
+  $.when.apply(@, promises).done ->
+    Backbone.history.start()
