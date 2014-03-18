@@ -1,5 +1,6 @@
 header
-  a.back-button href='#' <
+  a.back-button href='#'
+    = partial '/img/back.svg'
   h1
     | {{category.name}}
   a.add-button +
