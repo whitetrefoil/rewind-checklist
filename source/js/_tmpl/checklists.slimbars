@@ -1,7 +1,15 @@
-h1
-  | {{category.name}}
-ul
-  | {{#checklists}}
-  li
-    == link_to '{{name}}', '/#{{category_id}}/{{id}}'
-  | {{/checklists}}
+header
+  a.back-button href='#' <
+  h1
+    | {{category.name}}
+  a.add-button +
+#content
+  ul
+    | {{#checklists}}
+    li
+      == link_to '{{name}}', '#{{category_id}}/{{id}}'
+    | {{/checklists}}
+footer
+  a.back-button href='#' <
+  p Rewind Checklist
+  a.add-button +

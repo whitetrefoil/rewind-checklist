@@ -1,9 +1,15 @@
-h1
-  | {{name}}
-ul
-  | {{#items}}
-  li
-    label
-      input type='checkbox'
-      | {{.}}
-  | {{/items}}
+header
+  a.back-button*{:href => '#{{category_id}}'} <
+  h1
+    | {{name}}
+#content
+  ul
+    | {{#items}}
+    li
+      label
+        input type='checkbox'
+        | {{.}}
+    | {{/items}}
+footer
+  a.back-button <
+  p Rewind Checklist

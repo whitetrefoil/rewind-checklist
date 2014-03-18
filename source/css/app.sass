@@ -3,3 +3,70 @@
 
 // Import
 @import "reset"
+
+$fg_color: #28f
+
+body
+  color: $fg_color
+  font:
+    family: "Trebuchet MS", "Microsoft YaHei", sans-serif
+
+a
+  color: $fg_color
+  text-decoration: none
+
+#page
+  > header
+    position: relative
+    height: 40px
+    line-height: 40px
+    background-color: $fg_color
+    color: white
+    +box-shadow(rgba(0, 0, 0, 0.25) 0 1px 2px)
+
+    > a
+      color: white
+
+    > h1
+      margin: 0 40px
+      text-align: center
+      font-size: 110%
+
+  > footer
+    width: 100%
+    height: 40px
+    line-height: 40px
+    +box-shadow($fg_color 0 1px 0 inset)
+    position: fixed
+    bottom: 0
+
+    > p
+      margin: 0 40px
+      color: $fg_color
+      font-size: 60%
+      text-align: center
+
+  a.back-button
+    display: block
+    width: 40px
+    height: 40px
+    text-align: center
+    position: absolute
+    left: 0
+    top: 0
+  a.add-button
+    display: block
+    width: 40px
+    height: 40px
+    text-align: center
+    position: absolute
+    right: 0
+    top: 0
+
+  > #content
+    padding: 10px 20px
+    overflow: auto
+
+    ul
+      > li
+        line-height: 30px

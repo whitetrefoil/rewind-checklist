@@ -1,6 +1,12 @@
-h1 Rewind Checklists
-ul
-  | {{#categories}}
-  li
-    == link_to '{{name}}', '/#{{id}}'
-  | {{/categories}}
+header
+  h1 Rewind Checklists
+  a.add-button +
+#content
+  ul
+    | {{#categories}}
+    li
+      == link_to '{{name}}', '/#{{id}}'
+    | {{/categories}}
+footer
+  p Rewind Checklist
+  a.add-button +
